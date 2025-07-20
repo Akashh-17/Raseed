@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "158414928669-r0s44aci0d7n4aafq8nkqulv3usi6f7v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.raseed_app",
+            "certificate_hash": "b4912cd83ccb1afc90f4fe148100fe637b47f1dd"
+          }
+        },
+        {
           "client_id": "158414928669-fmm5k8i5rjoe772p3jdpa7as8pvcadfs.apps.googleusercontent.com",
           "client_type": 3
         }
