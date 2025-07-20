@@ -28,6 +28,9 @@ dependencies:
   # Set to a stable version that matches the code we've written.
   google_sign_in: ^6.2.1
 
+  # --- ENVIRONMENT VARIABLES ---
+  flutter_dotenv: ^5.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -38,6 +41,7 @@ flutter:
 
   assets:
     - assets/
+    - .env
     # If you have specific asset folders, list them here.
     # Example:
     # - assets/images/
