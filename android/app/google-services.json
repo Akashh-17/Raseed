@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "158414928669",
+    "project_id": "raseed-app-2f1f7",
+    "storage_bucket": "raseed-app-2f1f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158414928669:android:8a9253ac78a3457d0abff4",
+        "android_client_info": {
+          "package_name": "com.example.raseed_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158414928669-e7vpt4rq66improrligg38mi51sff6pr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.raseed_app",
+            "certificate_hash": "4e043af321f136e0e981576593ddc6221707ec01"
+          }
+        },
+        {
+          "client_id": "158414928669-fmm5k8i5rjoe772p3jdpa7as8pvcadfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuKJQ4qwEfw9NsvYBgrNiZAWX0BK91WkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158414928669-fmm5k8i5rjoe772p3jdpa7as8pvcadfs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "158414928669-74im08mp1k8s75efvrbel81fhe6929kn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.raseedApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

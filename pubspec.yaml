@@ -1,0 +1,54 @@
+name: raseed_app
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0' # Updated for modern package compatibility
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- UI & UTILITY PACKAGES ---
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10
+  google_fonts: ^6.2.1
+  lottie: ^3.1.2 # Using a more recent stable version
+  smooth_page_indicator: ^1.1.0
+
+  # --- FIREBASE PACKAGES (Updated to compatible versions) ---
+  # Using recent, stable, and compatible versions to resolve conflicts.
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
+  cloud_firestore: ^4.17.5
+  
+  # --- GOOGLE SIGN-IN (Crucial Change) ---
+  # Set to a stable version that matches the code we've written.
+  google_sign_in: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0 # Updated to a more recent version
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    # If you have specific asset folders, list them here.
+    # Example:
+    # - assets/images/
+    # - assets/icons/
+    # - assets/animations/
+
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+  #         weight: 700
+  #       - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+  #         weight: 600

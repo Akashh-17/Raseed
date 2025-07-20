@@ -1,0 +1,8 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="32" fill="#E8F5E9"/>
+  <circle cx="100" cy="90" r="40" fill="#FFF" stroke="#34A853" stroke-width="4"/>
+  <path d="M80 100 l15 15 l25 -25" stroke="#34A853" stroke-width="4" fill="none"/>
+  <rect x="60" y="140" width="80" height="20" rx="8" fill="#FFB300"/>
+  <text x="50%" y="40" text-anchor="middle" fill="#1A2341" font-size="16" font-family="Arial" font-weight="bold">Recurring & Warranty</text>
+  <text x="50%" y="190" text-anchor="middle" fill="#4B587C" font-size="14" font-family="Arial">Never miss a bill</text>
+</svg>

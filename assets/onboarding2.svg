@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="32" fill="#FFF8E1"/>
+  <rect x="40" y="60" width="120" height="60" rx="16" fill="#E3F2FD"/>
+  <rect x="60" y="80" width="40" height="20" rx="6" fill="#34A853"/>
+  <rect x="110" y="80" width="30" height="20" rx="6" fill="#4285F4"/>
+  <rect x="80" y="120" width="40" height="10" rx="5" fill="#1A2341"/>
+  <text x="50%" y="40" text-anchor="middle" fill="#1A2341" font-size="16" font-family="Arial" font-weight="bold">Scan Receipts</text>
+  <text x="50%" y="190" text-anchor="middle" fill="#4B587C" font-size="14" font-family="Arial">Spending Insights</text>
+</svg>
