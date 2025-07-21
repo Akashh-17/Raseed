@@ -1,7 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'auth_screen.dart'; // Make sure this import is correct
+import 'package:shared_preferences/shared_preferences.dart';
+import 'auth_gate.dart'; // <-- Use AuthGate instead of AuthScreen
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -109,13 +110,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      onPressed: () {
+                      onPressed: () async {
                         if (_page.round() == _pages.length - 1) {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (_) => const AuthScreen(),
-                            ),
-                          );
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.setBool('onboarding_completed', true);
+                          if (mounted) {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (_) => const AuthGate(),
+                              ),
+                            );
+                          }
                         } else {
                           _pageController.nextPage(
                             duration: const Duration(milliseconds: 400),
@@ -141,6 +146,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
+
+// Remaining helper classes (unchanged) — kept below for completeness
 
 class _OnboardingData {
   final String svgAsset;
@@ -183,7 +190,7 @@ class _AnimatedOnboardingPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
           child: Center(
             child: Column(
-              mainAxisSize: MainAxisSize.min, // <-- Fix: shrink-wrap children
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: data.showLogo ? 24 : 48),
@@ -208,10 +215,9 @@ class _AnimatedOnboardingPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color:
-                          Theme.of(context).brightness == Brightness.dark
-                              ? Colors.white
-                              : const Color(0xFF1A2341),
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : const Color(0xFF1A2341),
                       letterSpacing: 2.5,
                     ),
                   ),
@@ -280,10 +286,9 @@ class _AnimatedOnboardingPage extends StatelessWidget {
                       data.subtitle,
                       style: TextStyle(
                         fontSize: 16,
-                        color:
-                            Theme.of(context).brightness == Brightness.dark
-                                ? Colors.white70
-                                : const Color(0xFF4B587C),
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : const Color(0xFF4B587C),
                         height: 1.5,
                       ),
                       textAlign: TextAlign.center,
@@ -323,10 +328,9 @@ class _PageIndicator extends StatelessWidget {
             height: 8,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color:
-                  current == index
-                      ? const Color(0xFF1A2341)
-                      : const Color(0xFFD9D9D9),
+              color: current == index
+                  ? const Color(0xFF1A2341)
+                  : const Color(0xFFD9D9D9),
             ),
           ),
         ),
@@ -335,7 +339,6 @@ class _PageIndicator extends StatelessWidget {
   }
 }
 
-// Tagline with icon at the bottom
 Widget _getTaglineWithIcon(int page) {
   switch (page) {
     case 0:
@@ -360,7 +363,7 @@ Widget _getTaglineWithIcon(int page) {
             ),
           ),
         ],
-      ); // <-- Semicolon added
+      );
     case 1:
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -383,7 +386,7 @@ Widget _getTaglineWithIcon(int page) {
             ),
           ),
         ],
-      ); // <-- Semicolon added
+      );
     case 2:
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -406,7 +409,7 @@ Widget _getTaglineWithIcon(int page) {
             ),
           ),
         ],
-      ); // <-- Semicolon added
+      );
     default:
       return const SizedBox.shrink();
   }
